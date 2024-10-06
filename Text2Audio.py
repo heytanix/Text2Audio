@@ -1,19 +1,19 @@
-# Import the required libraries
-from gtts import gTTS
+#Importing the required libraries for the Pyhton script
+from gtts import gTTS #This is a TTS(Text to speech library from Google)
 import os
 
-# Function to convert text to speech
-def text_to_speech(text, output_filename="output.mp3"):
+#Function for converting the text into speech
+def text_to_speech(text, output_filename="output.mp3"): #defining a function within the script
     try:
-        # Create gTTS object
+        #Creating gTTS object
         tts = gTTS(text=text, lang='en')
-        # Save the converted speech to an mp3 file
+        #Saving the converted speech into an mp3 file
         tts.save(output_filename)
         print(f"Audio saved as {output_filename}")
     except Exception as e:
         print(f"Error occurred: {e}")
 
-# Function to read text from a file
+#Defining a function to read text from a file
 def read_text_file(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -22,7 +22,7 @@ def read_text_file(file_path):
         print(f"Error reading file: {e}")
         return None
 
-# Main function to handle user input or file upload
+#The main function to handle user's input or file uploads
 def main():
     print("Text-to-Speech Converter")
     print("Choose input method:")
